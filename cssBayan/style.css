@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: rgb(213, 217, 208);
+    
+}
+.container{
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.part input,
+.picture-container {
+    display: none;
+
+}
+
+.part {
+    background: rgba(123, 108, 112, 0.933);
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 10px 5px;
+    
+    
+}
+
+
+
+.part-title{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.part-title::after{
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-size:cover;
+    background-image: url("./img/open.png");
+    
+    
+}
+
+.picture-container{
+    max-width: 320px;
+    padding: 5px;
+    
+}
+.picture{
+    max-width: 300px;
+    
+}
+.part :checked + .part-title {
+    background: rgba(216, 144, 71, 0.933);
+    color: #ffffff;
+}
+
+
+.part :checked + .part-title::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-size:cover;
+    background-image: url("./img/close.png");
+    
+    display: none;
+}
+.part-title::after {
+    display: none;
+}
+
+
+
+/*hover*/
+.accordeon:hover {
+    background-color: blanchedalmond;
+}
+.accordeon:hover  .part-title::after {
+    display: block;  
+}
+.accordeon:hover  .click-one {
+    color: black;
+}
+/*hover*/
+
+
+.part :checked ~ .picture-container {
+    display: block;
+}
+
+
+
+
