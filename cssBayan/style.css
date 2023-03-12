@@ -5,19 +5,24 @@
 }
 
 
+
 body {
     background-color: rgb(213, 217, 208);
     
 }
 .container{
-    max-width: 320px;
-    margin: 0 auto;
+   
+    max-width: 300px;
+    margin: 5px auto;
+    
 }
+
+
 
 .part input,
 .picture-container {
     display: none;
-
+    
 }
 
 .part {
@@ -26,10 +31,30 @@ body {
     border-radius: 5px;
     margin: 10px 5px;
     
-    
 }
 
 
+.part-hidden{
+    background: rgba(123, 108, 112, 0.933);
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 10px 5px;
+
+    opacity: 0;
+    transition: 2s;
+
+}
+.part:hover + .part-hidden {
+    opacity: 1;
+    transition: 5s;
+    
+}
+
+.part-hidden:hover {
+    opacity: 1;
+    visibility: visible;
+   
+}
 
 .part-title{
     position: relative;
@@ -46,17 +71,27 @@ body {
     height: 25px;
     background-size:cover;
     background-image: url("./img/open.png");
+    transition: .5s;
     
     
 }
 
 .picture-container{
+    max-height: 300px;
     max-width: 320px;
     padding: 5px;
+    transition:2s;
+    
     
 }
 .picture{
+    display: block;
+    margin: 0 auto;
     max-width: 300px;
+    max-height: 200px;
+    
+    
+    
     
 }
 .part :checked + .part-title {
@@ -72,6 +107,7 @@ body {
     height: 25px;
     background-size:cover;
     background-image: url("./img/close.png");
+    transition: .3s;
     
     display: none;
 }
@@ -81,23 +117,38 @@ body {
 
 
 
-/*hover*/
+/*hover accordeon*/
+
+
 .accordeon:hover {
     background-color: blanchedalmond;
+   
 }
 .accordeon:hover  .part-title::after {
     display: block;  
 }
 .accordeon:hover  .click-one {
     color: black;
+    transition: 2s;
 }
-/*hover*/
 
+.accordeon:not(:hover) {
+    transition: 3s;
+  }
+
+/*hover */
+.part:hover  .picture-container{
+    display: block;
+    
+}
 
 .part :checked ~ .picture-container {
     display: block;
 }
 
 
+.part:not(:hover) {
+    transition: 3s;
+  }
 
 
